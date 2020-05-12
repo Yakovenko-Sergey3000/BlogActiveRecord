@@ -2,10 +2,17 @@ require 'rubygems'
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sinatra/activerecord'
-require 'sqlite3'
 
-set :database, {adapter: 'sqlite3', database: 'blog.sqlite'}
 
+set :database, {adapter: "sqlite3", database: "blog.sqlite"}
+
+class Post < ActiveRecord::Base
+
+end 
+
+class Comment < ActiveRecord::Base
+
+end
 
 get '/' do 
   erb :post
