@@ -1,14 +1,14 @@
 <h2>Type new post:</h2>
 
 
-<form class="form-group" action="/new" method="POST">
+<form class="form-group" action="/newpost" method="POST">
 <div class="form-group">
 
 	
 
 	<div class="form-group"><img src="https://1igolka.com/wp-content/uploads/2019/05/krasivye_risunki_karandashom_dlya_srisovki_33_30214553.png" width="300" height="272" class="rightpic"></div>
-	<input type="text" name="" class="form-group" placeholder="Your neme"><br>
-	<textarea class="form-group" rows="3" placeholder="Enter text here"></textarea><br>
+	<input type="text" name="post[name]" class="form-group" placeholder="Your neme"><br>
+	<textarea class="form-group" rows="3" placeholder="Enter text here" name="post[post]"></textarea><br>
 	<button type="submit" class="btn btn-info">New Post</button>
 </div>
 </form>

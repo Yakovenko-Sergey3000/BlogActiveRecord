@@ -18,10 +18,13 @@ get '/' do
   erb :post
 end 
 
-get '/new' do 
+get '/newpost' do 
   erb :newpost
 end  
 
-post '/new' do 
+post '/newpost' do 
+  @p = Post.new params[:post] 
+  @p.save
+
   erb "New post send"
 end  
