@@ -1,1 +1,38 @@
 <h2>Your Posts:</h2>
+
+
+<div class="rightpic"> 
+<img src="https://avatars.mds.yandex.net/get-pdb/750997/24340b16-4e9d-4312-be1a-32bf124841a2/s1200" width="600" height="400">
+</div>
+<style>
+   .rightpic {
+    float: right; /* Выравнивание по правому краю */
+    margin: 30px 005px; /* Отступы вокруг фотографии */
+   }
+  </style>
+
+  <% @p.each do |post| %>
+  <div class="form-group">
+ 	<p>
+
+ 		<a href="/post/<%=post.id%>"><%= post.post %></a><br>
+ 		<l>by: <%= post.name %></l>
+ 		
+ 	</p>
+ </div>
+
+ <%end %>
+
+
+<style type="text/css" class="form-group">
+
+  
+  p {
+    border: 1px solid black;
+    padding: 2px;
+    width: 300px
+   }
+
+  
+</style>
+

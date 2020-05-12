@@ -15,6 +15,7 @@ class Comment < ActiveRecord::Base
 end
 
 get '/' do 
+  @p = Post.order "created_at desc"
   erb :post
 end 
 
@@ -25,11 +26,13 @@ end
 post '/newpost' do 
   @p = Post.new params[:post] 
    if @p.save
-        erb "New post send"
+        redirect to ('/')
   else 
     @error = @p.errors.full_messages.first
     erb :newpost
   end 
+end 
 
-  
-end  
+get '/post/:id' do 
+    erb :postcomment
+ end  
