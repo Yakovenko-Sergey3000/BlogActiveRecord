@@ -1,7 +1,20 @@
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/reloader'
+require 'sinatra/activerecord'
+require 'sqlite3'
+
+set :database, {adapter: 'sqlite3', database: 'blog.sqlite'}
 
 
 get '/' do 
-  erb "hello"
+  erb :post
 end 
+
+get '/new' do 
+  erb :newpost
+end  
+
+post '/new' do 
+  erb "New post send"
+end  
