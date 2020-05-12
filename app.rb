@@ -7,7 +7,7 @@ require 'sinatra/activerecord'
 set :database, {adapter: "sqlite3", database: "blog.sqlite"}
 
 class Post < ActiveRecord::Base
-
+  validates :name, presence: true
 end 
 
 class Comment < ActiveRecord::Base
@@ -24,7 +24,12 @@ end
 
 post '/newpost' do 
   @p = Post.new params[:post] 
-  @p.save
+   if @p.save
+        erb "New post send"
+  else 
+    @error = @p.errors.full_messages.first
+    erb :newpost
+  end 
 
-  erb "New post send"
+  
 end  

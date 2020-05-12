@@ -33,7 +33,7 @@
 
 			<div class="nav-item">
 				<%if @error then %>
-						<div class="alert aria-label"><%=@error%></div>
+						<div class="alert alert-danger"><%=@error%></div>
 				<% end %>
 				<%= yield %>
 			</div>
